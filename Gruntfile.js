@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 				}
 			}
 			//Can be used to replace string in files
-			,replaceIncludes: {
+			,'string-replace': {
 				dev: {
 					files: {
 						'path/dest': 'path/source'
