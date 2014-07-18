@@ -12,3 +12,6 @@ vendor
 
 ### Distribution directory ###
 dist
+
+### Development items ###
+app/assets/*

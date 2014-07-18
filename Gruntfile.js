@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 			  // Task configuration
 			//setup files from vendor that need to be copied to appropriate directory
 			
+			//Concatinate JavaScript files in directories specified
 			,concat: {
 				options: {
 							separator: ';'
@@ -17,10 +18,14 @@ module.exports = function(grunt) {
 					//need to add Jquery and bootstrap
 					src: [
 						'app/js/*.js'
+						,'vendor/jquery/dist/jquery.js'
+						,'vendor/bootstrap/dist/bootstrap.js'
+						,'vendor/handlebars/handlebars.js'
 					]
-					,dest: 'app/app.js'
+					,dest: 'app/assets/app.js'
 				}
-			}			
+			}
+			//Copy tasks for dev and dist			
 			,copy:{
 				main: {
 					files: [
@@ -46,28 +51,45 @@ module.exports = function(grunt) {
 							 }							 
 							 ,{
 								expand: true
-								,cwd: 'app/'
+								,cwd: 'app/assets'
 								,src: ['app.css']
 								,dest: 'dist/assets/'
 								,flatten:true
-								,filter: 'isFile'
-								
+								,filter: 'isFile'								
 							 }
+							 ,{
+								expand: true
+								,cwd: 'app/assets'
+								,src: ['app.js']
+								,dest: 'dist/assets/'
+								,flatten:true
+								,filter: 'isFile'								
+							 }							 
+							 ,{
+								expand: true
+								,cwd: 'app/'
+								,src: ['app.htm']
+								,dest: 'dist/'
+								,flatten:true
+								,filter: 'isFile'								
+							 }					
 							 							 	
 					]
 
 				}
 			}
+			//Compiles LESS files to CSS
 			,less: {
 				main: {
 					options: {
 						compress: true
 					}
 					,files: {
-						'app/app.css' : 'app/styles/app.less'
+						'app/assets/app.css' : 'app/styles/app.less'
 					}
 				}
 			}
+			//Uglify - minify files specified
 			,uglify: {
 				options: {
 					mangle: false
@@ -75,7 +97,23 @@ module.exports = function(grunt) {
 				}
 				,dist : {
 					files : {
-						'dist/assets/app.js' : ['app/app.js']
+						'dist/assets/app.js' : ['app/assets/app.js']
+					}
+				}
+			}
+			//Can be used to replace string in files
+			,replaceIncludes: {
+				dev: {
+					files: {
+						'path/dest': 'path/source'
+					},
+					options: {
+						replacements: [
+								{
+									pattern: ''
+									,replacement: ''
+								}
+						]
 					}
 				}
 			}
@@ -89,6 +127,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-string-replace');
   //grunt.loadNpmTasks('grunt-phpunit');
 
   // Task definition
