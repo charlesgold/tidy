@@ -1,5 +1,8 @@
 /*
  * Controller
+ * 
+ *  alpha, not completed. Here you can create Object "extend"
+ *  can DELETE conent, not necessary.
  */
 
 	var Tidy =	{
@@ -25,7 +28,7 @@
 
 	var home	= Tidy.Model.extend({
 			title: 'dashboard'
-			,exp: 'charlieVariable'
+			,exp: 'test'
 	});
 
 	var app	=	Object.create(Tidy);
