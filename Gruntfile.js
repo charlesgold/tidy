@@ -85,6 +85,8 @@ module.exports = function(grunt) {
 						compress: true
 					}
 					,files: {
+						//too add more LESS files edit import of app.less
+						//this will also allow you to maintain hierarchy for load
 						'app/assets/app.css' : 'app/styles/app.less'
 					}
 				}
