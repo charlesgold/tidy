@@ -1,5 +1,5 @@
 /*
- * Controller
+ * Custom CST2 3
  */
 	var ItunesApi = {
 	    ajax: function() {

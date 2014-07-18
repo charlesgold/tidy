@@ -119,22 +119,52 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+			,watch: {
+				scripts: {
+					files: ['app/js/*.js','app/styles/**/*.less','!app/styles/app.less']
+					,tasks: ['concat','less:main','copy:main']
+					,options: {
+						//event: ['added','changed','deleted']
+					}
+				}
+			}
+			,open : {
+			    all : {
+			      path: 'http://127.0.0.1:8080/app.htm',
+			      //app: 'Google Chrome'
+			    }
+			 }			
+			,express: {
+				all: {
+					options: {
+						port: 8080
+						,bases: 'dist'
+						,hostname: "127.0.0.1"
+						,livereload: true					
+						}
+				}
+			}
 
 
     });
 
   // Plugin loading
   grunt.loadNpmTasks('grunt-contrib-concat');
-  //grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-express');
+  //grunt.loadNpmTasks('grunt-contrib-connect');
   //grunt.loadNpmTasks('grunt-phpunit');
 
   // Task definition
   //grunt.registerTask('default', ['watch']);
-  grunt.registerTask('default',"Run APP in Development mode", ['concat','less:main','copy:main']);
+  grunt.registerTask('default',"Run APP in Development mode", ['concat','less:main','copy:main','watch']);
   grunt.registerTask('dist',"Run APP in Dist mode", ['concat','less:main', 'copy:dist', 'uglify']);
+  
+  grunt.registerTask('server','start server',['express:all','open','watch']);
 
 };
