@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   //Initializing the configuration object
     grunt.initConfig({
+    		//this variable can be used to ready variables from package.json file.
 			pkg: grunt.file.readJSON('package.json')
 			  // Task configuration
 			//setup files from vendor that need to be copied to appropriate directory
@@ -157,8 +158,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-express');
-  //grunt.loadNpmTasks('grunt-contrib-connect');
-  //grunt.loadNpmTasks('grunt-phpunit');
+
 
   // Task definition
   //grunt.registerTask('default', ['watch']);
