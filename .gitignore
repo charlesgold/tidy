@@ -15,6 +15,3 @@ dist
 
 ### Development items ###
 app/assets/*
-app/img/*.jpg
-app/img/*.gif
-app/img/*.png
