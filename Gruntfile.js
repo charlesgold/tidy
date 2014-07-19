@@ -37,7 +37,15 @@ module.exports = function(grunt) {
 									,dest: 'app/assets/fonts/'
 									,flatten:true
 									,filter: 'isFile'
-								 }	
+								 }
+								 ,{
+								 	expand: true
+								 	,cwd: 'app/img/'
+								 	,src: ['**/*.{png,jpg,gif}']
+								 	,dest: 'app/assets/img/'
+								 	,flatten: true
+								 	,filter: 'isFile'
+								 }								 
 					]
 				}
 				,dist: {
@@ -49,7 +57,15 @@ module.exports = function(grunt) {
 								,dest: 'dist/assets/fonts/'
 								,flatten:true
 								,filter: 'isFile'
-							 }							 
+							 }		
+							 ,{
+							 	expand: true
+							 	,cwd: 'app/img/'
+							 	,src: ['**/*.{png,jpg,gif}']
+							 	,dest: 'dist/assets/img/'
+							 	,flatten: true
+							 	,filter: 'isFile'
+							 }							 					 
 							 ,{
 								expand: true
 								,cwd: 'app/assets'
