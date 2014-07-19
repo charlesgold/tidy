@@ -144,6 +144,14 @@ module.exports = function(grunt) {
 						,livereload: true					
 						}
 				}
+				,dev: {
+					options: {
+						port: 8080
+						,bases: 'app'
+						,hostname: "127.0.0.1"
+						,livereload: true					
+						}
+				}
 			}
 
 
@@ -166,5 +174,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist',"Run APP in Dist mode", ['concat','less:main', 'copy:dist', 'uglify']);
   
   grunt.registerTask('server','start server',['express:all','open','watch']);
+  //Dev
+  grunt.registerTask('server-dev','start server',['express:dev','open','watch']);  
 
 };
