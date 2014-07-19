@@ -170,11 +170,42 @@ module.exports = function(grunt) {
 
   // Task definition
   //grunt.registerTask('default', ['watch']);
-  grunt.registerTask('default',"Run APP in Development mode", ['concat','less:main','copy:main','watch']);
+  grunt.registerTask('default',"Run APP in Development mode", ['concat','less:main','copy:main']);
   grunt.registerTask('dist',"Run APP in Dist mode", ['concat','less:main', 'copy:dist', 'uglify']);
   
-  grunt.registerTask('server','start server',['express:all','open','watch']);
+  grunt.registerTask('server-dist-start','start server',['express:all','open','watch']);
   //Dev
-  grunt.registerTask('server-dev','start server',['express:dev','open','watch']);  
+  grunt.registerTask('server-dev-start','start server',['express:dev','open','watch']);
+  
+    
+  //Development Server Task
+  grunt.registerTask('server-dev','Run webserver for Development...',function(){
+  		console.log('Concat	- combining all JS files...');
+		console.log('LESS	- compile LESS to CSS...');
+		console.log('Copy	- copying font files');
+		
+		grunt.task.run('default');	
+		
+		console.log('Starting Express web server on port 8080...');
+		console.log('Opening ...app/app.htm');
+		console.log('Watch started...');
+		
+		grunt.task.run('server-dev-start');	  				
+  });
+  
+  //Distribution Server Task
+  grunt.registerTask('server-dist','Run webserver for Distribution...',function(){
+  		console.log('Concat	- combining all JS files...');
+		console.log('LESS	- compile LESS to CSS...');
+		console.log('Copy	- copying font files');
+		
+		grunt.task.run('dist');	
+		
+		console.log('Starting Express web server on port 8080...');
+		console.log('Opening ...dist/app.htm');
+		console.log('Watch started...');
+		
+		grunt.task.run('server-dist-start');	  				
+  });
 
 };
