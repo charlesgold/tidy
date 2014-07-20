@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 				,js: {
 					//need to add Jquery and bootstrap
 					src: [
-						'app/js/*.js'
-						,'vendor/jquery/dist/jquery.js'
+						'vendor/jquery/dist/jquery.js'
+						,'app/js/*.js'						
 						,'vendor/bootstrap/dist/bootstrap.js'
 						,'vendor/handlebars/handlebars.js'
 					]
