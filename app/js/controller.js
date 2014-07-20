@@ -8,28 +8,49 @@
 	var Tidy =	{
 			Model:	{
 				//blank
-				extend: function(extInfo){
+				extend: function(obj){
+				
 					
-					//Check to see if the extension is an array or just one single value.
-					if(extInfo.isArray()){
-						
-						
-						
-					} else {
+					//iterate through extend
+					for(var name in obj){
+							if(Object.prototype.toString.call(obj[name]) == '[object Array]'){
+								for(var i=0;i<obj[name].length;i++){
+									
+									//reassign
+									var arrObj	=	obj[name];
+									for(var sName in arrObj){
+									
+										Tidy.Model[name]	=	arrObj[sName];
 											
-						//model "title"
-						Tidy.Model[extInfo.title] = extInfo.value;						
+									}
+																		
+								}
+							}
 					}
-
-					
+					//model "title"					
+					/*
+					 
+					Tidy.Model[extInfo.title] = extInfo.exp;						
+					return Tidy.Model[extInfo.title];
+					*/
 				}
 			}
 	};
 
-	var home	= Tidy.Model.extend({
-			title: 'dashboard'
-			,exp: 'test'
-	});
 
 	var app	=	Object.create(Tidy);
-	
+
+	var newOne =	Tidy.Model.extend({			
+			'home': [
+							{
+								prop: 'aTitle'
+								,prop2:	function(aParam){
+									console.log(aParam);
+								}								
+							}				
+			]			
+
+	});
+
+	app.Model['home'].prop2('hello');
+	console.log(app.Model['home'].prop);
