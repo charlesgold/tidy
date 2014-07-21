@@ -8,7 +8,7 @@ node_modules
 
 ###bower components###
 bower_components
-vendor
+/vendor
 
 ### Distribution directory ###
 dist
