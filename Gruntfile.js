@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 					src: [
 						'vendor/jquery/dist/jquery.js'
 						,'app/js/*.js'						
-						,'vendor/bootstrap/dist/bootstrap.js'
+						,'vendor/bootstrap/dist/js/bootstrap.js'
 						,'vendor/handlebars/handlebars.js'
 					]
 					,dest: 'app/assets/app.js'
