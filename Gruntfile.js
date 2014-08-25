@@ -45,6 +45,13 @@ module.exports = function(grunt) {
 								 	,dest: 'app/assets/img/'
 								 	,flatten: true
 								 	,filter: 'isFile'
+								 }
+								 ,{
+								 	expand: true
+								 	,cwd: 'app/static/'
+								 	,src: ['**']
+								 	,dest: 'app/assets/static/'
+								 	,flatten: false								 	
 								 }								 
 					]
 				}
@@ -89,7 +96,14 @@ module.exports = function(grunt) {
 								,dest: 'dist/'
 								,flatten:true
 								,filter: 'isFile'								
-							 }					
+							 }
+							 ,{
+							 	expand: true
+							 	,cwd: 'app/static/'
+							 	,src: ['**']
+							 	,dest: 'dist/assets/static/'
+							 	,flatten: false								 	
+							 }								 					
 							 							 	
 					]
 
