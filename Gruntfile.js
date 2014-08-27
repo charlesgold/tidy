@@ -18,10 +18,12 @@ module.exports = function(grunt) {
 				,js: {
 					//need to add Jquery and bootstrap
 					src: [
-						'vendor/jquery/dist/jquery.js'
-						,'app/js/*.js'						
+						'vendor/jquery/dist/jquery.js'				
 						,'vendor/bootstrap/dist/js/bootstrap.js'
-						,'vendor/handlebars/handlebars.js'
+						//,'vendor/handlebars/handlebars.js'
+						,'vendor/moment/min/moment.min.js'
+						,'vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+						,'app/js/*.js'		
 					]
 					,dest: 'app/assets/app.js'
 				}
