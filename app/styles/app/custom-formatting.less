@@ -25,3 +25,74 @@
       color:  @gray-light;
     }
 }
+
+.schedule-container {
+  background:@gray-darker;
+  padding-top:5px;
+}
+
+.enable-schedule {  
+    padding-top:5px;  
+}
+
+/**
+ *   SMS example formatting 
+ *  
+ **/
+@iphone-width: 320px;
+@iphone-color:#49B9FB;
+@android-width: 240px;
+@android-color:#92B83E;
+@other-width: 0px;
+
+@emulation-border: dashed;
+@emulation-border-color: @gray-lighter;
+
+.sms-preview-nav {
+  margin-bottom:5px;
+  i.apple {
+    color: #000;
+  }
+  i.android {
+    color:#92B83E;
+  }
+}
+
+.sms-preview-pane {
+  
+  .sms-emulation {
+    margin:0 auto;
+    padding:5px;
+   
+  }
+  .sms-container {
+    float:right;
+    border: 1px @emulation-border @emulation-border-color;
+    border-radius:@border-radius-base;    
+  }
+  .iphone {
+    .sms-container {
+      min-width:168.5px;
+      max-width:168.5px;
+      //float:right;
+      //border: 1px @emulation-border @emulation-border-color;
+      //border-radius:@border-radius-base;
+    }
+    border: 2px solid @iphone-color;
+    border-radius: @border-radius-base;
+    min-width: @iphone-width;
+    max-width: @iphone-width;
+  }
+  .android {
+    .sms-container {
+      min-width: ceil((@android-width - 10));
+      max-width: ceil((@android-width - 10));
+    }
+    border: 2px solid @android-color;
+    border-radius: @border-radius-base;    
+      min-width: @android-width;
+      max-width: @android-width;
+    
+  }  
+}
+
