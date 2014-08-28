@@ -236,7 +236,7 @@
                                                                         </div>
                                                                         <div class="panel-body">
                                                                               <div class="form-group">                                                                                      
-                                                                                      <textarea class="form-control" placeholder="Campaign message goes here..." rows="10"></textarea>
+                                                                                      <textarea id="sms-message" class="form-control" placeholder="Campaign message goes here..." rows="10"></textarea>
                                                                                       <p class="help-block">Example block-level help text here.</p>
                                                                                </div>                                                                                 
                                                                         </div>
@@ -251,13 +251,13 @@
                                                                                     <div class="col-lg-4 col-sm-12 ">
                                                                                           <button type="button" class="btn btn-success">Send Now</button>
                                                                                           or
-                                                                                          <button type="button" class="btn btn-default">Schedule</button>                                                                                          
+                                                                                          <button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Send Later</button>                                                                                          
                                                                                     </div>
                                                                               </div>
                                                                               
                                                                               
                                                                               <!-- schedule row -->
-                                                                              <div class="row">
+                                                                              <div class="row schedule-related">
                                                                                     <div class="col-lg-12">                                                                                          
                                                                                           <blockquote>
                                                                                                 <small>Schedule the campaign for a future time/date.</small>
@@ -266,7 +266,7 @@
                                                                                     </div>
                                                                               </div>
                                                                               
-                                                                              <div class="row">
+                                                                              <div class="row schedule-related">
                                                                                     <div class="col-lg-3 col-sm-12 text-center">
                                                                                           <div class="form-group">
                                                                                                 <div class="input-group date" id="scheduleDate">
@@ -322,7 +322,7 @@
                                                                 <div class="sms-emulation iphone">
                                                                       <div class="sms-container">
                                                                             <div class="sms-body">
-                                                                                  <p>
+                                                                                  <p id="smsMsgPreview">
                                                                                         Example text message body goes here. To be used to understand where breaks in the formatting may be. Not a gurantee <a href="#">www.link.com</a>
                                                                                   </p>
                                                                             </div>

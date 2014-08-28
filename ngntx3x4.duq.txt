@@ -1,0 +1,19 @@
+﻿custom formatting for less and new controller for new.htm
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 5 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/js/controller.js
+#	modified:   app/new.htm
+#	modified:   app/styles/app/custom-formatting.less
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/js/new-controller.js
+

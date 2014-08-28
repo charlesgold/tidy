@@ -48,9 +48,19 @@
 									console.log(aParam);
 								}								
 							}				
+			]
+			,'newCampaign': [
+						{
+							msg: ''
+							,getMessage: function(){
+									var smsMsg	= $('#sms-message').val();
+									this.msg	=	smsMsg;
+							}
+						}
 			]			
 
 	});
 
-	app.Model['home'].prop2('hello');
-	console.log(app.Model['home'].prop);
+	//app.Model['home'].prop2('hello');
+	//console.log(app.Model['home'].prop);
+
