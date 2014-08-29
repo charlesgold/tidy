@@ -249,9 +249,10 @@
                                                                                           </div>
                                                                                     </div>
                                                                                     <div class="col-lg-4 col-sm-12 ">
-                                                                                          <button type="button" class="btn btn-success">Send Now</button>
+                                                                                          <button type="button" class="btn btn-success" id="send-now">Send Now</button>
                                                                                           or
-                                                                                          <button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Send Later</button>                                                                                          
+                                                                                          <button type="button" class="btn btn-default" id="send-later"><i class="fa fa-clock-o"></i> Send Later</button>
+                                                                                          <button type="button" class="btn btn-default" id="save-later"><i class="fa fa-clock-o"></i> Save...</button>                                                                                          
                                                                                     </div>
                                                                               </div>
                                                                               
@@ -270,7 +271,7 @@
                                                                                     <div class="col-lg-3 col-sm-12 text-center">
                                                                                           <div class="form-group">
                                                                                                 <div class="input-group date" id="scheduleDate">
-                                                                                                      <input type="text" class="form-control" />
+                                                                                                      <input type="text" class="form-control" id="schedule-date-text" name="scheduleDateText"/>
                                                                                                       <span class="input-group-addon">
                                                                                                             <span class="fa fa-calendar"></span>
                                                                                                       </span>
@@ -280,7 +281,7 @@
                                                                                     <div class="col-lg-3 col-sm-12 text-center">
                                                                                           <div class="form-group">
                                                                                                 <div class="input-group date" id="scheduleTime">
-                                                                                                      <input type="text" class="form-control" />
+                                                                                                      <input type="text" class="form-control" id="schedule-time-text" name="scheduleTimeText"/>
                                                                                                       <span class="input-group-addon">
                                                                                                             <span class="fa fa-clock-o"></span>
                                                                                                       </span>
@@ -291,7 +292,7 @@
                                                                                           <div class="enable-schedule">
                                                                                                 <div class="form-group-inline">
                                                                                                       <label class="checkbox-inline">
-                                                                                                            <input type="checkbox">Enable
+                                                                                                            <input type="checkbox" id="enable-schedule" name="enableSchedule">Enable
                                                                                                       </label>
                                                                                                 </div>                                   
                                                                                           </div>                                                         

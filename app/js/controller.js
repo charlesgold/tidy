@@ -33,6 +33,7 @@
 					Tidy.Model[extInfo.title] = extInfo.exp;						
 					return Tidy.Model[extInfo.title];
 					*/
+					return Tidy.Model;
 				}
 			}
 	};
@@ -48,16 +49,7 @@
 									console.log(aParam);
 								}								
 							}				
-			]
-			,'newCampaign': [
-						{
-							msg: ''
-							,getMessage: function(){
-									var smsMsg	= $('#sms-message').val();
-									this.msg	=	smsMsg;
-							}
-						}
-			]			
+			]		
 
 	});
 

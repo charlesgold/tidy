@@ -1,10 +1,11 @@
 $(function () {
-	$('#scheduleDate').datetimepicker(
+$('#scheduleDate').datetimepicker(
 		{
 			pickTime: false
 			,icons: {
 				date: 'fa fa-calendar'				
 			}
+			,minDate: ((new Date()).getMonth()+1 ) + '/' + (new Date().getDate()) + '/' + (new Date().getFullYear())
 			
 		}
 	),
@@ -16,6 +17,8 @@ $(function () {
 				,up: 'fa fa-arrow-up'
 				,down: 'fa fa-arrow-down'				
 			}
+			,minuteStepping: 5
+
 
 		}
 	)
