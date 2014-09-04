@@ -54,10 +54,10 @@
 
 .sms-preview-nav {
   margin-bottom:5px;
-  i.apple {
+  .apple {
     color: #000;
   }
-  i.android {
+  .android {
     color:#92B83E;
   }
 }
@@ -82,17 +82,17 @@
       //border: 1px @emulation-border @emulation-border-color;
       //border-radius:@border-radius-base;
     }
-    border: 2px solid @iphone-color;
+    border: 5px solid @iphone-color;
     border-radius: @border-radius-base;
     min-width: @iphone-width;
     max-width: @iphone-width;
   }
   .android {
     .sms-container {
-      min-width: ceil((@android-width - 10));
-      max-width: ceil((@android-width - 10));
+      min-width: ceil((@android-width - 15));
+      max-width: ceil((@android-width - 15));
     }
-    border: 2px solid @android-color;
+    border: 5px solid @android-color;
     border-radius: @border-radius-base;    
       min-width: @android-width;
       max-width: @android-width;

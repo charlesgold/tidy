@@ -22,6 +22,9 @@
 							,sizeRemaining: function(){
 								return (this.maxSize - this.monitorSize);	
 							}
+							,longUrl: function(){
+								return ($('#longUrl').val());
+							}
 						}
 			]			
 
@@ -30,7 +33,7 @@
  * end of extend
  */
 
-$('#sms-message').on('keyup',function(){
+$('#sms-message').on('keyup',function(event){
 		
 	pglNewCampaign.newCampaign.getMessage();
 	//console.log(app.Model['newCampaign'].msg);
@@ -57,7 +60,28 @@ $('#send-later').on('click',function(){
 	//change the button that is showing, so that it can be saved, instead of sending.
 	$(this).hide();
 	$('#save-later').show();
-
+	//*May want to introduce some logic here that doesn't show the "Save"
+	//button unless the enabled box is ticked. Or the date / time boxes have values.
 });
 
+//Handle preview device buttons
+$('.apple').on('click',function(){
+	$('.device-description').html('iPhone');
+	$('.sms-emulation').removeClass('android');	
+	$('.sms-emulation').addClass('apple');
+});
 
+$('.android').on('click',function(){
+	$('.device-description').html('Android');
+	$('.sms-emulation').removeClass('apple');	
+	$('.sms-emulation').addClass('android');
+});
+
+//Handle shortlink generte button
+$('#makeShortLink').on('click',function(){
+	var data	=	{
+							'longUrl': pglNewCampaign.newCampaign.longUrl()	
+	}
+	var gapi	=	globalController.global.ajax("https://www.googleapis.com/urlshortener/v1/url/?key=AIzaSyAYzMxprGNBBtvyde7LboLBtZmiISMdO7I",JSON.stringify(data),'post','#sms-message');
+	
+});

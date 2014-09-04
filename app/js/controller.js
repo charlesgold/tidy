@@ -40,6 +40,37 @@
 
 
 	var app	=	Object.create(Tidy);
+	
+	var globalController	=	Tidy.Model.extend({
+		'global': [
+						{
+							ajax: function(path, data, type, control){
+								
+									$.ajax({
+											dataType: 'json',
+											type: type,
+											url: path,
+											data: data,
+											//contentType: "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2),
+											//mimeType: "multipart/form-data",
+											contentType: "application/json",							
+											processData: false,
+											cache: false,
+											success: function(response) {
+												console.log('SUCCESS', response);
+												//return response;	
+												$(control).val($(control).val()+' ' + response.id + ' ');											
+											},
+											error: function(response) {
+												console.log('FAIL', response);
+												return 'error';
+											}
+										});		
+											
+							}						
+						}
+		]
+	});
 
 	var newOne =	Tidy.Model.extend({			
 			'home': [
