@@ -23,7 +23,7 @@
 								return (this.maxSize - this.monitorSize);	
 							}
 							,longUrl: function(){
-								return ($('#longUrl').val());
+								return ($('#longUrl').val()).replace(' ','');
 							}
 						}
 			]			
@@ -32,9 +32,8 @@
 /**
  * end of extend
  */
-
-$('#sms-message').on('keyup',function(event){
-		
+var smsMessageSync	=	function(){
+			
 	pglNewCampaign.newCampaign.getMessage();
 	//console.log(app.Model['newCampaign'].msg);
 	var newMsg	=pglNewCampaign.newCampaign.msg;
@@ -50,8 +49,13 @@ $('#sms-message').on('keyup',function(event){
 	} else {
 			$('.remaining-count').html(pglNewCampaign.newCampaign.sizeRemaining()).removeClass('negative');
 	}
+};
 
-	
+$('#sms-message').on('keyup',function(event){
+	smsMessageSync();
+});
+$('#sms-message').on('change', function(){
+	smsMessageSync();
 });
 
 $('#send-later').on('click',function(){	
@@ -83,5 +87,4 @@ $('#makeShortLink').on('click',function(){
 							'longUrl': pglNewCampaign.newCampaign.longUrl()	
 	}
 	var gapi	=	globalController.global.ajax("https://www.googleapis.com/urlshortener/v1/url/?key=AIzaSyAYzMxprGNBBtvyde7LboLBtZmiISMdO7I",JSON.stringify(data),'post','#sms-message');
-	
 });

@@ -59,7 +59,7 @@
 											success: function(response) {
 												console.log('SUCCESS', response);
 												//return response;	
-												$(control).val($(control).val()+' ' + response.id + ' ');											
+												$(control).val($(control).val()+' ' + response.id + ' ').change();											
 											},
 											error: function(response) {
 												console.log('FAIL', response);
