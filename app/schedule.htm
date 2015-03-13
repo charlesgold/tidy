@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>PGL SMS</title>
+    
+	<link href="assets/app.css" rel="stylesheet">
+      <link href="assets/static/metisMenu.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+<!-- simulate -->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-8">
+
+    <!-- simulate inside form -->
+
+    <div class="row">
+      <div class="col-lg-12">
+
+<!-- Schedule Actions buttons -->
+
+  <div class="row" id="schedule-actions">
+    <div class="col-sm-12 col-md-5">
+      <button type="button" class="btn btn-success" id="send-later"><i class="fa fa-clock-o"></i> Send Later</button>
+      <span>or</span>
+      <button type="button" class="btn btn-warning" id="send-now">Send Now</button>
+    </div>          
+  </div>
+
+<!-- Schedule Action buttons -->
+
+<!-- actual UI code -->
+
+  <div class="schedule-container" id="schedule">
+    <div class="row">
+      <div class="col-sm-12">
+
+      <!-- Schedule controls -->
+
+        <div class="schedule-controls">
+
+          <!-- add schedule line -->  
+          <div class="row">
+
+            <!-- date input -->
+            <div class="col-sm-12 col-md-5">
+              <div class="form-group text-center">
+                <div class="input-group date" id="scheduleDate">
+                  <input type="text" class="form-control" id="schedule-date-text" name="scheduleDateText"/>
+                  <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                  </span>
+                </div>
+              </div>             
+            </div>
+            <!-- date input end -->
+
+            <!-- time input -->
+            <div class="col-sm-12 col-md-5">
+              <div class="form-group text-center">
+                <div class="input-group date" id="scheduleTime">
+                  <input type="text" class="form-control" id="schedule-time-text" name="scheduleTimeText"/>
+                  <span class="input-group-addon">
+                    <span class="fa fa-clock-o"></span>
+                  </span>
+                </div>
+              </div>                
+            </div>            
+            <!-- time input end -->
+
+            <!-- add button -->
+            <div class="col-sm-12 col-md-2">
+              <button class="btn btn-default" id="add-schedule-line">ADD <i class="fa fa-plus"></i></button>
+            </div>
+            <!-- add button end -->
+          </div>
+          <!-- end add schedule line -->
+
+          <!-- list schedules -->
+            <div class="row">
+              <div class="col-sm-12 col-md-10">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-title">Campaign Schedules</div>
+                  </div>
+                  <div class="panel-body">
+                    <!-- store schedule hidden fields -->
+                    <input type="hidden" id="schedule-line-init" value="eyJsaXN0IjpbeyJzZGF0ZSI6IjAzXC8xM1wvMjAxNSIsInN0aW1lIjoiNDowMCBQTSIsImNvbXBsZXRlZCI6IjAiLCJlbmFibGVkIjoiMCJ9LHsic2RhdGUiOiIwM1wvMjZcLzIwMTUiLCJzdGltZSI6IjU6MTUgUE0iLCJjb21wbGV0ZWQiOiIwIiwiZW5hYmxlZCI6IjAifV19"/>
+                    <div class="schedule-line-fields"></div>
+                    <!-- store schedule hidden fields -->
+                    <table class="table table-condensed table-bordered table-striped table-responsive">
+                      <thead>
+                        <tr>
+                          <td>Date</td>
+                          <td>Time</td>
+                          <td>Status</td>
+                          <td></td>
+                        </tr>
+                      </thead>
+                      <tbody id="schedule-lines">
+                        <tr class="text-center">
+                         <td>03/13/2015</td>
+                          <td>12:01 PM</td>
+                          <td>
+                            <span class="label label-info">pending</span>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-xs remove-schedule-line" data-schedule-id="0">
+                              <i class="fa fa-trash-o"></i>
+                            </button>
+                          </td>                          
+                        </tr>
+                        <tr class="text-center">
+                         <td>03/13/2015</td>
+                          <td>12:01 PM</td>
+                          <td>
+                            <span class="label label-info">pending</span>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger btn-xs remove-schedule-line" data-schedule-id="0">
+                              <i class="fa fa-trash-o"></i>
+                            </button>
+                          </td>                          
+                        </tr>                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>               
+
+              </div>
+            </div>
+          <!-- list schedules end -->
+
+        </div>
+
+      <!-- Schedule controls end -->
+
+      </div>
+    </div>
+  </div>
+
+<!-- actual UI code end -->
+
+
+
+      </div>
+    </div>
+
+    <!-- simulate inside form end -->
+
+    </div>
+  </div>
+
+</div>
+
+<!-- simulate end -->
+
+
+
+
+
+
+
+
+
+
+  <script src="assets/app.js"></script>     
+  <script src="assets/static/metisMenu.js"></script>
+  <script src="assets/static/sb-admin-2.js"></script> 
+  </body>
+ </html>

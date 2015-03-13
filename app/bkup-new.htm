@@ -282,114 +282,37 @@
                                                           </div>
                                                           
                                                           <div class="row schedule-related">
-<!-- actual UI code -->
-
-  <div class="schedule-container" id="schedule">
-    <div class="row">
-      <div class="col-sm-12">
-
-      <!-- Schedule controls -->
-
-        <div class="schedule-controls">
-
-          <!-- add schedule line -->  
-          <div class="row">
-
-            <!-- date input -->
-            <div class="col-sm-12 col-md-5">
-              <div class="form-group text-center">
-                <div class="input-group date" id="scheduleDate">
-                  <input type="text" class="form-control" id="schedule-date-text" name="scheduleDateText"/>
-                  <span class="input-group-addon">
-                    <span class="fa fa-calendar"></span>
-                  </span>
-                </div>
-              </div>             
-            </div>
-            <!-- date input end -->
-
-            <!-- time input -->
-            <div class="col-sm-12 col-md-5">
-              <div class="form-group text-center">
-                <div class="input-group date" id="scheduleTime">
-                  <input type="text" class="form-control" id="schedule-time-text" name="scheduleTimeText"/>
-                  <span class="input-group-addon">
-                    <span class="fa fa-clock-o"></span>
-                  </span>
-                </div>
-              </div>                
-            </div>            
-            <!-- time input end -->
-
-            <!-- add button -->
-            <div class="col-sm-12 col-md-2">
-              <button class="btn btn-default" id="add-schedule-line">ADD <i class="fa fa-plus"></i></button>
-            </div>
-            <!-- add button end -->
-          </div>
-          <!-- end add schedule line -->
-
-          <!-- list schedules -->
-            <div class="row">
-              <div class="col-sm-12 col-md-10">
-
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <div class="panel-title">Campaign Schedule</div>
-                  </div>
-                  <div class="panel-body">
-                    <table class="table table-condensed table-bordered table-striped table-responsive">
-                      <thead>
-                        <tr>
-                          <td>Date</td>
-                          <td>Time</td>
-                          <td>Status</td>
-                          <td></td>
-                        </tr>
-                      </thead>
-                      <tbody id="schedule-lines">
-                        <tr class="text-center">
-                         <td>03/13/2015</td>
-                          <td>12:01 PM</td>
-                          <td>
-                            <span class="label label-info">pending</span>
-                          </td>
-                          <td>
-                            <button class="btn btn-danger btn-xs remove-schedule-line" data-schedule-id="0">
-                              <i class="fa fa-trash-o"></i>
-                            </button>
-                          </td>                          
-                        </tr>
-                        <tr class="text-center">
-                         <td>03/13/2015</td>
-                          <td>12:01 PM</td>
-                          <td>
-                            <span class="label label-info">pending</span>
-                          </td>
-                          <td>
-                            <button class="btn btn-danger btn-xs remove-schedule-line" data-schedule-id="0">
-                              <i class="fa fa-trash-o"></i>
-                            </button>
-                          </td>                          
-                        </tr>                        
-                      </tbody>
-                    </table>
-                  </div>
-                </div>               
-
-              </div>
-            </div>
-          <!-- list schedules end -->
-
-        </div>
-
-      <!-- Schedule controls end -->
-
-      </div>
-    </div>
-  </div>
-
-<!-- actual UI code end -->                                                                                  
+                                                                <div class="col-lg-3 col-sm-12">
+                                                                  <span style="display: inline-block; padding-left:5px;">Date</span>
+                                                                  <div class="form-group text-center">
+                                                                        <div class="input-group date" id="scheduleDate">
+                                                                              <input type="text" class="form-control" id="schedule-date-text" name="scheduleDateText"/>
+                                                                              <span class="input-group-addon">
+                                                                                    <span class="fa fa-calendar"></span>
+                                                                              </span>
+                                                                        </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-sm-12">
+                                                                    <span style="display: inline-block; padding-left:5px;">Time</span>
+                                                                  <div class="form-group text-center">
+                                                                        <div class="input-group date" id="scheduleTime">
+                                                                              <input type="text" class="form-control" id="schedule-time-text" name="scheduleTimeText"/>
+                                                                              <span class="input-group-addon">
+                                                                                    <span class="fa fa-clock-o"></span>
+                                                                              </span>
+                                                                        </div>
+                                                                  </div>                                                                                          
+                                                                </div> 
+                                                                <div class="col-lg-3 col-sm-12 text-left">
+                                                                      <div class="enable-schedule">
+                                                                            <div class="form-group-inline">
+                                                                                  <label class="checkbox-inline">
+                                                                                        <input type="checkbox" id="enable-schedule" name="enableSchedule">Enable
+                                                                                  </label>
+                                                                            </div>                                   
+                                                                      </div>                                                         
+                                                                </div>                                                                                   
                                                           </div>
                                                           <!-- schedule row end -->
                                                     </div>
