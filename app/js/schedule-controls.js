@@ -45,7 +45,7 @@ var pglSchedule =	Tidy.Model.extend({
 			}			
 			,createLine: function(sDate, sTime){				
 				var lineList	=	 JSON.parse(this.scheduleLineData);
-				lineList['list'].push({"sdate":sDate,"stime":sTime});
+				lineList['list'].push({"id": 0,"sdate":sDate,"stime":sTime});
 				this.scheduleLineData = JSON.stringify(lineList);
 				
 				this.updateScheduleLines();
@@ -71,6 +71,8 @@ var pglSchedule =	Tidy.Model.extend({
 						newLine = newLine + '</tr>';
 
 						//hidden form fields
+						var fId = (typeof(item.id) !== 'undefined')?item.id:0;
+						newField = newField + '<input type="hidden" name="data[CampaignSchedule]['+ i + '][id]" value="'+ fId + '"/>';
 						newField = newField + '<input type="hidden" name="data[CampaignSchedule]['+ i + '][start_date]" value="'+ item.sdate + '"/>';
 						newField = newField + '<input type="hidden" name="data[CampaignSchedule]['+ i + '][start_time]" value="'+ item.stime + '"/>';						
 
