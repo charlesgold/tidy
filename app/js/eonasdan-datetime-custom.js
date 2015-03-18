@@ -6,6 +6,7 @@ $('#scheduleDate').datetimepicker(
 				date: 'fa fa-calendar'				
 			}
 			,minDate: ((new Date()).getMonth()+1 ) + '/' + (new Date().getDate()) + '/' + (new Date().getFullYear())
+			,format: 'YYYY-MM-DD'
 			
 		}
 	),
